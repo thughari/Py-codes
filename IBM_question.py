@@ -1,4 +1,4 @@
-code
+# code
 
 # Open the file with read only permit
 f = open('file_00.txt')
