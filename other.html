@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armada vs Kamino Returns</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Armada vs Kamino jitoSOL-USDC Returns</h1>
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script>
+        // Function to generate date labels dynamically
+        function generateDateLabels(startDate, numMonths) {
+            const labels = [];
+            for (let i = 0; i < numMonths; i++) {
+                const date = new Date(startDate.getFullYear(), startDate.getMonth() + i, 1);
+                labels.push(date.toISOString().slice(0, 7)); // Push YYYY-MM format
+            }
+            return labels;
+        }
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: generateDateLabels(new Date(2024, 0, 1), 7), // Generate labels for 7 months starting from January 2024
+                datasets: [{
+                    label: 'Armada jitoSOL-USDC',
+                    data: [100, 110, 120, 115, 125, 130, 135], // Example Armada pool data (dummy)
+                    borderColor: 'blue',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                }, {
+                    label: 'Kamino jitoSOL-USDC',
+                    data: [90, 100, 105, 110, 115, 120, 125], // Example Kamino pool data (dummy)
+                    borderColor: 'red',
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                }, {
+                    label: '50% jitoSOL + 50% USDC',
+                    data: [95, 105, 112, 112, 120, 125, 130], // Example 50/50 holding data (dummy)
+                    borderColor: 'green',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        type: 'time', // Use time scale for x-axis
+                        time: {
+                            unit: 'month', // Display unit as month
+                            displayFormats: {
+                                month: 'MMM YYYY' // Format for month and year
+                            }
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            suggestedMin: 0
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

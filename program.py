@@ -1,9 +1,9 @@
-print("hello world")
-print(int(True))
-a=100
-b=type(a)
-print(b)
-print(type(b))
+# print("hello world")
+# print(int(True))
+# a=100
+# b=type(a)
+# print(b)
+# print(type(b))
 
 '''b=101
 sum=0
@@ -117,9 +117,10 @@ for i in chars:
         print(random.randint(nums[-2],nums[-1]))
 
 '''
-chars=input()
-nums=[1,2,3]
+# chars=input()
+# nums=[1,2,3]
 
-t=60 if 'a' in chars else nums[-1]*60
+# t=60 if 'a' in chars else nums[-1]*60
 
-print(t)
+# print(t)
+
